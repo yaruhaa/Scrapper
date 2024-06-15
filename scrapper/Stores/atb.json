@@ -1,0 +1,47 @@
+{
+   "storeInfo": {
+      "storeName": "АТБ",
+      "productSelector": "section > div > div > div.catalog-page__content > div.catalog-page__container > div.catalog-page__list > div.catalog-list > article",
+      "productNameSelector": ".catalog-item__info > div > a",
+      "productPriceSelector": "div.catalog-item__bottom > div.catalog-item__product-price.product-price.product-price--weight > data > span",
+      "productDiscountPriceSelectorBefore": "div.catalog-item__product-price.product-price.product-price--weight.product-price--sale > data.product-price__bottom > span",
+      "productDiscountPriceSelectorAfter": "div.catalog-item__product-price.product-price.product-price--weight.product-price--sale > data.product-price__top > span",
+      "productImgSelector": "div.catalog-item__photo > a > picture > img",
+      "ageVerificationSelector": "#alcohol-modal > div.custom-modal__container > div > button"
+   },
+   "Sections": [
+      {
+         "Бакалії": {
+            "Categories": [
+               {
+                  "Чіпси, сухарики, снеки": "https://www.atbmarket.com/catalog/cipsi-sneki?page=1"
+               }
+            ]
+         }
+      },
+      {
+         "Овочі та фрукти": {
+            "Categories": [
+               {
+                  "Фрукти та ягоди" : "https://www.atbmarket.com/catalog/288-frukti-yagodi"
+               },
+               {
+                  "Овочі": "https://www.atbmarket.com/catalog/289-ovochi"
+               },
+               {
+                  "Зелень": "https://www.atbmarket.com/catalog/390-zelen"
+               },
+               {
+                  "Соління та салати": "https://www.atbmarket.com/catalog/468-solinnya-salati"
+               },
+               {
+                  "Гриби": "https://www.atbmarket.com/catalog/298-gribi"
+               },
+               {
+                  "Горіхи, сухофрукти та насіння": "https://www.atbmarket.com/catalog/446-gorikhi-sukhofrukti"
+               }
+            ]
+         }
+      }
+   ]
+}

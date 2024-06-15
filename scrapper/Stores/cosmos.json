@@ -1,0 +1,52 @@
+{
+   "storeInfo": {
+      "storeName": "КОСМОС",
+      "productSelector": "#PageWrapBody_desktopMode > div.jsx-ebc81387b8a52f64.ProductsBox > div > div",
+      "productNameSelector": "#PageWrapBody_desktopMode > div.jsx-ebc81387b8a52f64.ProductsBox > div > div > a",
+
+      "productPriceSelector": "div.jsx-d938668396c71a46.ProductTile__details > div.jsx-d938668396c71a46.ProductTile__prices > div > span.jsx-ed1ae448ea3f5172.Price__value_caption",
+      "productDiscountPriceSelectorBefore": "div.jsx-d938668396c71a46.ProductTile__details > div.jsx-d938668396c71a46.ProductTile__prices > div.jsx-d938668396c71a46.ProductTile__oldPrice > span.jsx-ed1ae448ea3f5172.Price__value_body.Price__value_minor",
+      "productDiscountPriceSelectorAfter": "div.jsx-d938668396c71a46.ProductTile__details > div.jsx-d938668396c71a46.ProductTile__prices > div:nth-child(2) > span.jsx-ed1ae448ea3f5172.Price__value_caption.Price__value_discount",
+
+      "productImgSelector": "div.jsx-d938668396c71a46.ProductTile__imageContainer > img",
+      "ageVerificationSelector": "div.jsx-ef254e944d8990fe.ConfirmModal__buttons > button.jsx-966ed87a73bbaf75.Button.Button_primary.Button_large.Button_fullWidth"
+   },
+   "Sections": [
+      {
+         "Бакалії": {
+            "Categories": [
+               {
+                  "Чіпси, сухарики, снеки": "https://cosmos.zakaz.ua/uk/categories/snacks-cosmos/available=1/"
+               }
+            ]
+         }
+      },
+      {
+         "Овочі та фрукти": {
+            "Categories": [
+               {
+                  "Фрукти та ягоди" : [
+                     "https://cosmos.zakaz.ua/uk/categories/fruits-cosmos/available=1/",
+                     "https://cosmos.zakaz.ua/uk/categories/berries-cosmos/available=1/"
+                  ]
+               },
+               {
+                  "Овочі": "https://cosmos.zakaz.ua/uk/categories/vegetables-cosmos/available=1/"
+               },
+               {
+                  "Зелень": "https://cosmos.zakaz.ua/uk/categories/fresh-greens-cosmos/available=1/"
+               },
+               {
+                  "Соління та салати": "https://cosmos.zakaz.ua/uk/categories/salads-and-pickles-cosmos/available=1/"
+               },
+               {
+                  "Гриби": "https://cosmos.zakaz.ua/uk/categories/mushrooms-cosmos/available=1/"
+               },
+               {
+                  "Горіхи, сухофрукти та насіння": "https://cosmos.zakaz.ua/uk/categories/nuts-and-dried-fruits-cosmos/available=1/"
+               }
+            ]
+         }
+      }
+   ]
+}

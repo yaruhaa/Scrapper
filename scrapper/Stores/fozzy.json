@@ -1,0 +1,41 @@
+{
+   "storeInfo": {
+      "storeName": "FOZZY",
+      "productSelector": "#js-product-list > div > div > article",
+      "productNameSelector": "div.product-description > div.h3.product-title > a",
+      "productPriceSelector": "div.product-description > div.row.product-price-and-shipping > div.col.col-6.retail-price.border-right > div > a > span",
+      "productDiscountPriceSelectorBefore": "div.product-description > div.row.product-price-and-shipping > div.col.col-6.retail-price > div > span.regular-price",
+      "productDiscountPriceSelectorAfter": "div.product-description > div.row.product-price-and-shipping > div.col.col-6.retail-price > div > a > span",
+      "productImgSelector": "div.thumbnail-container > a > img",
+      "ageVerificationSelector": "#enter_btn"
+   },
+   "Sections": [
+      {
+         "Бакалії": {
+            "Categories": [
+               {
+                  "Чіпси, сухарики, снеки": "https://fozzyshop.ua/300033-sneki-orekhi-sukhofrukty/s-15/tovari_v_nayavnosti-da?order=product.quantity.desc&page=1"
+               }
+            ]
+         }
+      },
+      {
+         "Овочі та фрукти": {
+            "Categories": [
+               {
+                  "Фрукти та ягоди" : "https://fozzyshop.ua/300371-frukty-i-yagody/s-79/tovari_v_nayavnosti-da?order=product.quantity.desc&page=1"
+               },
+               {
+                  "Овочі": "https://fozzyshop.ua/300370-ovoshhi/s-79/tovari_v_nayavnosti-da?order=product.quantity.desc&page=1"
+               },
+               {
+                  "Зелень": "https://fozzyshop.ua/300369-zelen/s-79/tovari_v_nayavnosti-da?order=product.quantity.desc&page=1"
+               },
+               {
+                  "Гриби": "https://fozzyshop.ua/300367-griby-svezhie/s-79/tovari_v_nayavnosti-da?order=product.quantity.desc&page=1"
+               }
+            ]
+         }
+      }
+   ]
+}

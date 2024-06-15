@@ -1,0 +1,48 @@
+{
+   "storeInfo": {
+      "storeName": "РОСТ",
+      "productSelector": "body > div.all.wrapper > div > div.matrix-main.bound-wrapper > div > div.tovars > div > div",
+      "productNameSelector": ".item-body > h4 > a",
+
+      "productPriceSelector": "div.item-body > div.item-price > span",
+
+      "productImgSelector": "div.item-img > a > img",
+      "ageVerificationSelector": "#age_yes"
+   },
+   "Sections": [
+      {
+         "Бакалії": {
+            "Categories": [
+               {
+                  "Чіпси, сухарики, снеки": "https://rost.kh.ua/catalog/produktovaya_gruppa-bakaleya-zakuski_k_pivu/?page=20"
+               }
+            ]
+         }
+      },
+      {
+         "Овочі та фрукти": {
+            "Categories": [
+               {
+                  "Фрукти та ягоди" : "https://rost.kh.ua/catalog/produktovaya_gruppa-frukty_ovoschi_suxofrukty-frukty_i_yagody/?page=20"
+               },
+               {
+                  "Овочі": "https://rost.kh.ua/catalog/produktovaya_gruppa-frukty_ovoschi_suxofrukty-ovoschi/?page=20"
+               },
+               {
+                  "Зелень": "https://rost.kh.ua/catalog/produktovaya_gruppa-frukty_ovoschi_suxofrukty-zelen/?page=20"
+               },
+               {
+                  "Гриби": "https://rost.kh.ua/catalog/produktovaya_gruppa-frukty_ovoschi_suxofrukty-griby/?page=20"
+               },
+               {
+                  "Горіхи, сухофрукти та насіння": [
+                     "https://rost.kh.ua/catalog/produktovaya_gruppa-frukty_ovoschi_suxofrukty-orexi_i_semechki/?page=20",
+                     "https://rost.kh.ua/catalog/produktovaya_gruppa-frukty_ovoschi_suxofrukty-suxofrukty/?page=20"
+                  ]
+               }
+            ]
+         }
+      }
+
+   ]
+}

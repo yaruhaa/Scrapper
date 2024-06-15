@@ -1,0 +1,52 @@
+{
+   "storeInfo": {
+      "storeName": "Auchan",
+      "productSelector": "#PageWrapBody_desktopMode > div.jsx-ebc81387b8a52f64.ProductsBox > div > div",
+      "productNameSelector": "#PageWrapBody_desktopMode > div.jsx-ebc81387b8a52f64.ProductsBox > div > div > a",
+
+      "productPriceSelector": "div.jsx-d938668396c71a46.ProductTile__details > div.jsx-d938668396c71a46.ProductTile__prices > div > span.jsx-ed1ae448ea3f5172.Price__value_caption",
+      "productDiscountPriceSelectorBefore": "div.jsx-d938668396c71a46.ProductTile__details > div.jsx-d938668396c71a46.ProductTile__prices > div.jsx-d938668396c71a46.ProductTile__oldPrice > span.jsx-ed1ae448ea3f5172.Price__value_body.Price__value_minor",
+      "productDiscountPriceSelectorAfter": "div.jsx-d938668396c71a46.ProductTile__details > div.jsx-d938668396c71a46.ProductTile__prices > div:nth-child(2) > span.jsx-ed1ae448ea3f5172.Price__value_caption.Price__value_discount",
+      "productImgSelector": "div.jsx-d938668396c71a46.ProductTile__imageContainer > img",
+      "ageVerificationSelector": "#alcohol-modal"
+   },
+   "Sections": [
+      {
+         "Бакалії": {
+            "Categories": [
+               {
+                  "Чіпси, сухарики, снеки": "https://auchan.zakaz.ua/uk/categories/crisps-and-snacks-auchan/available=1/"
+               }
+            ]
+         }
+      },
+      {
+         "Овочі та фрукти": {
+            "Categories": [
+               {
+                  "Фрукти та ягоди": "https://auchan.zakaz.ua/uk/categories/fruits-auchan/available=1/"
+               },
+               {
+                  "Овочі": "https://auchan.zakaz.ua/uk/categories/vegetables-auchan/available=1/"
+               },
+               {
+                  "Зелень": "https://auchan.zakaz.ua/uk/categories/fresh-greens-auchan/available=1/"
+               },
+               {
+                  "Соління та салати": "https://auchan.zakaz.ua/uk/categories/salads-and-pickles-auchan/available=1/"
+               },
+               {
+                  "Гриби": "https://auchan.zakaz.ua/uk/categories/mushrooms-auchan/available=1/"
+               },
+               {
+                  "Горіхи, сухофрукти та насіння": [
+                     "https://auchan.zakaz.ua/uk/categories/nuts-auchan/available=1/",
+                     "https://auchan.zakaz.ua/uk/categories/seeds-1-auchan/available=1/",
+                     "https://auchan.zakaz.ua/uk/categories/dried-fruits-auchan/available=1/"
+                  ]
+               }
+            ]
+         }
+      }
+   ]
+}
