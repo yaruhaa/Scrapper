@@ -20,7 +20,7 @@ fs.readFile('../modify/modify_products.json', 'utf8', (err, data) => {
                 const grouped = {};
 
                 data[category][subcategory].forEach(product => {
-                    const key = `${product.type}-${product.weight}-${product.firm}-${product.flavor}`;
+                    const key = `${product.type}-${product.weight}-${product.firm}-${product.flavor}-${product.sort}`;
 
                     if (!grouped[key]) {
                         grouped[key] = {
@@ -29,6 +29,7 @@ fs.readFile('../modify/modify_products.json', 'utf8', (err, data) => {
                                 firm: product.firm,
                                 flavor: product.flavor,
                                 weight: product.weight,
+                                sort: product.sort,
                                 OtherInfo: []
                             }
                         };

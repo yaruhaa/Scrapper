@@ -36,6 +36,7 @@ async function main() {
                 firm: product.firm,
                 flavor: product.flavor,
                 weight: product.weight,
+                sort: product.sort,
                 groupName: product.groupName
             }));
 
@@ -46,32 +47,28 @@ async function main() {
                     firm: product.firm,
                     flavor: product.flavor,
                     weight: product.weight,
+                    sort: product.sort,
                     groupName: product.groupName
                 };
 
-                const existingProduct = await collection.findOne(filter); // Перевірка наявності продукту в базі даних
+                const existingProduct = await collection.findOne(filter);
 
+                let productId;
                 if (existingProduct) {
                     console.log(`Updating product: ${JSON.stringify(product)}`);
                     await collection.updateOne(filter, { $set: product });
+                    productId = existingProduct._id;
                 } else {
                     console.log(`Inserting new product: ${JSON.stringify(product)}`);
-                    await collection.insertOne(product);
+                    const insertResult = await collection.insertOne(product);
+                    productId = insertResult.insertedId;
                 }
 
                 // Вставка історії цін для кожного магазину
                 for (const storeInfo of product.OtherInfo) {
-                    const historyFilter = {
-                        type: product.type,
-                        firm: product.firm,
-                        flavor: product.flavor,
-                        weight: product.weight,
-                        groupName: product.groupName,
-                        storeName: storeInfo.storeName
-                    };
-
                     const historyEntry = {
-                        ...historyFilter,
+                        productId: productId, // Додано посилання на продукт
+                        storeName: storeInfo.storeName,
                         date: new Date(),
                         price: storeInfo.productPrice
                     };
