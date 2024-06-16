@@ -1,12 +1,12 @@
 const fs = require('fs');
 
-// Загрузка данных
+// Загрузка данних
 const typesData = require('./Dictionaries/type.json');
 const firmsData = require('./Dictionaries/firm.json');
 const flavorsData = require('./Dictionaries/flavor.json');
 const sortsData = require('./Dictionaries/variety.json');
 
-// Функция для удаления ненужного из названия продукта
+// Функція для видалення непотрібного
 function removeUnwantedStrings(productName) {
     return productName.replace(/\b\d+\s*гат\b/gi, '').replace(/№\d+/g, '').replace(/\s{2,}/g, ' ').trim();
 }
@@ -87,7 +87,6 @@ function processPricesAndWeight(products) {
             if (product.storeName === "MAUDAU") {
                 product.productPrice = product.productPrice.replace(/\u00A0/g, " ").replace(/ ₴$/, "");
             }
-            // Преобразование строки цены в число и обратно в строку для унифицированного формата
             product.productPrice = parseFloat(product.productPrice).toFixed(2);
         }
         if (product.productDiscountPrice) {
@@ -97,11 +96,9 @@ function processPricesAndWeight(products) {
             if (product.storeName === "MAUDAU") {
                 product.productDiscountPrice = product.productDiscountPrice.replace(/\u00A0/g, " ").replace(/ ₴$/, "");
             }
-            // Преобразование строки цены в число и обратно в строку для унифицированного формата
             product.productDiscountPrice = parseFloat(product.productDiscountPrice).toFixed(2);
         }
         const weight = extractWeight(product.productName);
-        // Если вес не найден, устанавливаем его в 1000 грамм
         if (weight !== null) {
             product.weight = weight;
         } else {
@@ -110,7 +107,7 @@ function processPricesAndWeight(products) {
     });
 }
 
-// Чтение данных из products.json
+// Читання даних із products.json
 fs.readFile('../scrapper/products.json', 'utf8', (err, data) => {
     if (err) {
         console.error('Ошибка чтения файла:', err);
@@ -121,7 +118,7 @@ fs.readFile('../scrapper/products.json', 'utf8', (err, data) => {
         const productsData = JSON.parse(data);
         let allProducts = [];
 
-        // Преобразование данных в общий массив продуктов с двухуровневой категорией
+        // Перетворення даних у загальний масив продуктів із дворівневою категорією
         for (const mainCategory in productsData) {
             if (productsData.hasOwnProperty(mainCategory)) {
                 const subCategories = productsData[mainCategory];
@@ -138,12 +135,12 @@ fs.readFile('../scrapper/products.json', 'utf8', (err, data) => {
             }
         }
 
-        // Удаление ненужных строк из названий продуктов
+        // Видалення непотрібних рядків із назв продуктів
         allProducts.forEach(product => {
             product.productName = removeUnwantedStrings(product.productName);
         });
 
-        // Применение функции обработки цен и веса
+        // Застосування функції обробки цін і ваги
         processPricesAndWeight(allProducts);
 
         // Создание стандартизированных объектов данных
@@ -152,11 +149,11 @@ fs.readFile('../scrapper/products.json', 'utf8', (err, data) => {
         const standardizedFlavors = standardizeData(flavorsData);
         const standardizedSorts = standardizeData(sortsData);
 
-        // Добавление отделения типа товара, фирмы, вкуса и сорта от названия
+        // Додавання відокремлення типу товару, фірми, смаку та сорту від назви
         allProducts.forEach(product => {
             const category = product.subCategory || 'Другое';
 
-            // Проверка, существует ли категория в словарях
+            // Перевірка, чи існує категорія в словниках
             if (standardizedTypes[category] && standardizedFirms[category] && standardizedFlavors[category] && standardizedSorts[category]) {
                 const { attribute: type } = separateAttributeFromName(product.productName, standardizedTypes, category);
                 const { attribute: firm } = separateAttributeFromName(product.productName, standardizedFirms, category);
@@ -175,7 +172,7 @@ fs.readFile('../scrapper/products.json', 'utf8', (err, data) => {
             }
         });
 
-        // Преобразование данных обратно в формат с двухуровневыми категориями
+        // Перетворення даних назад у формат із дворівневими категоріями
         const categorizedProducts = allProducts.reduce((acc, product) => {
             const mainCategory = product.mainCategory;
             const subCategory = product.subCategory;
@@ -191,7 +188,7 @@ fs.readFile('../scrapper/products.json', 'utf8', (err, data) => {
             return acc;
         }, {});
 
-        // Запись результатов в modify_products.json
+        // Запис результатів в modify_products.json
         fs.writeFile('modify_products.json', JSON.stringify(categorizedProducts, null, 2), (err) => {
             if (err) {
                 console.error('Ошибка записи в файл:', err);
