@@ -50,28 +50,46 @@ function separateAttributeFromName(productName, attributeData, category) {
 
 // Функция для извлечения веса из названия продукта и копирования его в отдельное поле
 function extractWeight(productName) {
-    const gramMatch = productName.match(/(\d+(?:[.,]\d+)?)\s*г/);
     const kilogramMatch = productName.match(/(\d+(?:[.,]\d+)?)\s*кг/);
+    const gramMatch = productName.match(/(\d+(?:[.,]\d+)?)\s*г/);
     const plusMatch = productName.match(/(\d+)\s*\+\s*(\d+)\s*г/);
     const kgOnlyMatch = productName.match(/кг/);
     const pieceMatch = productName.match(/(\d+)\s*шт/);
+    const sht = productName.match(/шт/);
+    const gatMatch = productName.match(/(\d+)\s*гат/);
+    const gat = productName.match(/гат/);
 
     if (plusMatch) {
         const firstNumber = parseInt(plusMatch[1]);
         const secondNumber = parseInt(plusMatch[2]);
         return firstNumber + secondNumber;
-    } else if (gramMatch) {
-        return parseFloat(gramMatch[1].replace(',', '.'));
-    } else if (kilogramMatch) {
+    }
+    else if (kilogramMatch) {
         return parseFloat(kilogramMatch[1].replace(',', '.')) * 1000;
-    } else if (kgOnlyMatch) {
-        return 1000;
-    } else if (pieceMatch) {
+    }
+    else if (gatMatch) {
+        return `${gatMatch[1]} шт`;
+    }
+    else if (gat) {
+        return `1 шт`;
+    }
+    else if (gramMatch) {
+        return parseFloat(gramMatch[1].replace(',', '.'));
+    }
+    else if (pieceMatch) {
         return `${pieceMatch[1]} шт`;
-    } else {
+    }
+    else if (sht) {
+        return `1 шт`;
+    }
+    else if (kgOnlyMatch) {
+        return 1000;
+    }
+    else {
         return null;
     }
 }
+
 
 // Функция обработки цен и веса
 function processPricesAndWeight(products) {

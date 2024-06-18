@@ -14,7 +14,10 @@
          "Бакалії": {
             "Categories": [
                {
-                  "Чіпси, сухарики, снеки": "https://www.atbmarket.com/catalog/cipsi-sneki?page=1"
+                  "Чіпси, сухарики, снеки": [
+                     "https://www.atbmarket.com/catalog/cipsi",
+                     "https://www.atbmarket.com/catalog/sneki"
+                  ]
                }
             ]
          }
